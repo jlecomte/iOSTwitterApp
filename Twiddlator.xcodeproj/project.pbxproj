@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4EAE1441BB5A4FB9A9E6E6FC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3663E6DDE0B6499B9A94C730 /* libPods.a */; };
+		65F8AB4219D6272C00030D76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8AB4119D6272C00030D76 /* AppDelegate.swift */; };
+		65F8AB4419D6272C00030D76 /* HomeTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8AB4319D6272C00030D76 /* HomeTimeline.swift */; };
+		65F8AB4719D6272C00030D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F8AB4519D6272C00030D76 /* Main.storyboard */; };
+		65F8AB4919D6272C00030D76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65F8AB4819D6272C00030D76 /* Images.xcassets */; };
+		65F8AB4C19D6272C00030D76 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F8AB4A19D6272C00030D76 /* LaunchScreen.xib */; };
+		65F8AB5819D6272C00030D76 /* TwiddlatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8AB5719D6272C00030D76 /* TwiddlatorTests.swift */; };
+		65F8AB6719D629CF00030D76 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8AB6619D629CF00030D76 /* Tweet.swift */; };
+		65F8AB6C19D62C3E00030D76 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8AB6B19D62C3E00030D76 /* TwitterClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65F8AB5219D6272C00030D76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65F8AB3419D6272C00030D76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65F8AB3B19D6272C00030D76;
+			remoteInfo = Twiddlator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3663E6DDE0B6499B9A94C730 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		65F8AB3C19D6272C00030D76 /* Twiddlator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twiddlator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65F8AB4019D6272C00030D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65F8AB4119D6272C00030D76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		65F8AB4319D6272C00030D76 /* HomeTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimeline.swift; sourceTree = "<group>"; };
+		65F8AB4619D6272C00030D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65F8AB4819D6272C00030D76 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		65F8AB4B19D6272C00030D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		65F8AB5119D6272C00030D76 /* TwiddlatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwiddlatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65F8AB5619D6272C00030D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65F8AB5719D6272C00030D76 /* TwiddlatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiddlatorTests.swift; sourceTree = "<group>"; };
+		65F8AB6619D629CF00030D76 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		65F8AB6819D62BAA00030D76 /* Twiddlator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Twiddlator-Bridging-Header.h"; sourceTree = "<group>"; };
+		65F8AB6B19D62C3E00030D76 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
+		96F6B7CE5AD744FA80112294 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65F8AB3919D6272C00030D76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EAE1441BB5A4FB9A9E6E6FC /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65F8AB4E19D6272C00030D76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65F8AB3319D6272C00030D76 = {
+			isa = PBXGroup;
+			children = (
+				65F8AB3E19D6272C00030D76 /* Twiddlator */,
+				65F8AB5419D6272C00030D76 /* TwiddlatorTests */,
+				65F8AB3D19D6272C00030D76 /* Products */,
+				96F6B7CE5AD744FA80112294 /* Pods.xcconfig */,
+				6EBCD0F62BF740278AC78229 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		65F8AB3D19D6272C00030D76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65F8AB3C19D6272C00030D76 /* Twiddlator.app */,
+				65F8AB5119D6272C00030D76 /* TwiddlatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65F8AB3E19D6272C00030D76 /* Twiddlator */ = {
+			isa = PBXGroup;
+			children = (
+				65F8AB6319D629AF00030D76 /* API */,
+				65F8AB6219D6296100030D76 /* Views */,
+				65F8AB6119D6295B00030D76 /* Models */,
+				65F8AB4119D6272C00030D76 /* AppDelegate.swift */,
+				65F8AB4519D6272C00030D76 /* Main.storyboard */,
+				65F8AB4819D6272C00030D76 /* Images.xcassets */,
+				65F8AB4A19D6272C00030D76 /* LaunchScreen.xib */,
+				65F8AB3F19D6272C00030D76 /* Supporting Files */,
+				65F8AB6819D62BAA00030D76 /* Twiddlator-Bridging-Header.h */,
+			);
+			path = Twiddlator;
+			sourceTree = "<group>";
+		};
+		65F8AB3F19D6272C00030D76 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65F8AB4019D6272C00030D76 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65F8AB5419D6272C00030D76 /* TwiddlatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				65F8AB5719D6272C00030D76 /* TwiddlatorTests.swift */,
+				65F8AB5519D6272C00030D76 /* Supporting Files */,
+			);
+			path = TwiddlatorTests;
+			sourceTree = "<group>";
+		};
+		65F8AB5519D6272C00030D76 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65F8AB5619D6272C00030D76 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65F8AB6119D6295B00030D76 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65F8AB6619D629CF00030D76 /* Tweet.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		65F8AB6219D6296100030D76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				65F8AB4319D6272C00030D76 /* HomeTimeline.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		65F8AB6319D629AF00030D76 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				65F8AB6B19D62C3E00030D76 /* TwitterClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		6EBCD0F62BF740278AC78229 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3663E6DDE0B6499B9A94C730 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65F8AB3B19D6272C00030D76 /* Twiddlator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65F8AB5B19D6272C00030D76 /* Build configuration list for PBXNativeTarget "Twiddlator" */;
+			buildPhases = (
+				1269048E8F8E4BE3BD8DEF6E /* Check Pods Manifest.lock */,
+				65F8AB3819D6272C00030D76 /* Sources */,
+				65F8AB3919D6272C00030D76 /* Frameworks */,
+				65F8AB3A19D6272C00030D76 /* Resources */,
+				2328E3FFF380484EA321D6E2 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Twiddlator;
+			productName = Twiddlator;
+			productReference = 65F8AB3C19D6272C00030D76 /* Twiddlator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65F8AB5019D6272C00030D76 /* TwiddlatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65F8AB5E19D6272C00030D76 /* Build configuration list for PBXNativeTarget "TwiddlatorTests" */;
+			buildPhases = (
+				65F8AB4D19D6272C00030D76 /* Sources */,
+				65F8AB4E19D6272C00030D76 /* Frameworks */,
+				65F8AB4F19D6272C00030D76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65F8AB5319D6272C00030D76 /* PBXTargetDependency */,
+			);
+			name = TwiddlatorTests;
+			productName = TwiddlatorTests;
+			productReference = 65F8AB5119D6272C00030D76 /* TwiddlatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65F8AB3419D6272C00030D76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Julien Lecomte";
+				TargetAttributes = {
+					65F8AB3B19D6272C00030D76 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					65F8AB5019D6272C00030D76 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 65F8AB3B19D6272C00030D76;
+					};
+				};
+			};
+			buildConfigurationList = 65F8AB3719D6272C00030D76 /* Build configuration list for PBXProject "Twiddlator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65F8AB3319D6272C00030D76;
+			productRefGroup = 65F8AB3D19D6272C00030D76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65F8AB3B19D6272C00030D76 /* Twiddlator */,
+				65F8AB5019D6272C00030D76 /* TwiddlatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65F8AB3A19D6272C00030D76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65F8AB4719D6272C00030D76 /* Main.storyboard in Resources */,
+				65F8AB4C19D6272C00030D76 /* LaunchScreen.xib in Resources */,
+				65F8AB4919D6272C00030D76 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65F8AB4F19D6272C00030D76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1269048E8F8E4BE3BD8DEF6E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2328E3FFF380484EA321D6E2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65F8AB3819D6272C00030D76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65F8AB6C19D62C3E00030D76 /* TwitterClient.swift in Sources */,
+				65F8AB4419D6272C00030D76 /* HomeTimeline.swift in Sources */,
+				65F8AB4219D6272C00030D76 /* AppDelegate.swift in Sources */,
+				65F8AB6719D629CF00030D76 /* Tweet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65F8AB4D19D6272C00030D76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65F8AB5819D6272C00030D76 /* TwiddlatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65F8AB5319D6272C00030D76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65F8AB3B19D6272C00030D76 /* Twiddlator */;
+			targetProxy = 65F8AB5219D6272C00030D76 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		65F8AB4519D6272C00030D76 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65F8AB4619D6272C00030D76 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		65F8AB4A19D6272C00030D76 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65F8AB4B19D6272C00030D76 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65F8AB5919D6272C00030D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		65F8AB5A19D6272C00030D76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65F8AB5C19D6272C00030D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96F6B7CE5AD744FA80112294 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Twiddlator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Twiddlator/Twiddlator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		65F8AB5D19D6272C00030D76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96F6B7CE5AD744FA80112294 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Twiddlator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Twiddlator/Twiddlator-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		65F8AB5F19D6272C00030D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TwiddlatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Twiddlator.app/Twiddlator";
+			};
+			name = Debug;
+		};
+		65F8AB6019D6272C00030D76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TwiddlatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Twiddlator.app/Twiddlator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65F8AB3719D6272C00030D76 /* Build configuration list for PBXProject "Twiddlator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65F8AB5919D6272C00030D76 /* Debug */,
+				65F8AB5A19D6272C00030D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65F8AB5B19D6272C00030D76 /* Build configuration list for PBXNativeTarget "Twiddlator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65F8AB5C19D6272C00030D76 /* Debug */,
+				65F8AB5D19D6272C00030D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65F8AB5E19D6272C00030D76 /* Build configuration list for PBXNativeTarget "TwiddlatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65F8AB5F19D6272C00030D76 /* Debug */,
+				65F8AB6019D6272C00030D76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65F8AB3419D6272C00030D76 /* Project object */;
+}
