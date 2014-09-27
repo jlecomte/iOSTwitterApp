@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4EAE1441BB5A4FB9A9E6E6FC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3663E6DDE0B6499B9A94C730 /* libPods.a */; };
+		65EB959C19D7796000A98DD7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB959B19D7796000A98DD7 /* User.swift */; };
 		65F8AB4219D6272C00030D76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8AB4119D6272C00030D76 /* AppDelegate.swift */; };
 		65F8AB4419D6272C00030D76 /* HomeTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8AB4319D6272C00030D76 /* HomeTimeline.swift */; };
 		65F8AB4719D6272C00030D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F8AB4519D6272C00030D76 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		3663E6DDE0B6499B9A94C730 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		65EB959B19D7796000A98DD7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65F8AB3C19D6272C00030D76 /* Twiddlator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twiddlator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F8AB4019D6272C00030D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65F8AB4119D6272C00030D76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				65F8AB6619D629CF00030D76 /* Tweet.swift */,
+				65EB959B19D7796000A98DD7 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				65F8AB6C19D62C3E00030D76 /* TwitterClient.swift in Sources */,
 				65F8AB4419D6272C00030D76 /* HomeTimeline.swift in Sources */,
 				65F8AB4219D6272C00030D76 /* AppDelegate.swift in Sources */,
+				65EB959C19D7796000A98DD7 /* User.swift in Sources */,
 				65F8AB6719D629CF00030D76 /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

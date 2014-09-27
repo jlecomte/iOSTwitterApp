@@ -29,6 +29,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager, UIAlertViewDelegate {
     }
 
     func authorize() {
+
         fetchRequestTokenWithPath(
             "/oauth/request_token",
             method: "POST",
@@ -41,7 +42,8 @@ class TwitterClient: BDBOAuth1RequestOperationManager, UIAlertViewDelegate {
                 var authURL = "https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken.token)"
                 UIApplication.sharedApplication().openURL(NSURL(string: authURL))
 
-            }, failure: {
+            },
+            failure: {
                 (error: NSError!) -> Void in
 
                 UIAlertView(
@@ -53,6 +55,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager, UIAlertViewDelegate {
     }
 
     func handleOAuthCallback(queryString: String, success: (() -> Void)!) {
+
         fetchAccessTokenWithPath(
             "/oauth/access_token",
             method: "POST",
@@ -65,7 +68,8 @@ class TwitterClient: BDBOAuth1RequestOperationManager, UIAlertViewDelegate {
                 if success != nil {
                     success()
                 }
-            }, failure: {
+            },
+            failure: {
                 (error: NSError!) -> Void in
 
                 UIAlertView(
@@ -79,4 +83,141 @@ class TwitterClient: BDBOAuth1RequestOperationManager, UIAlertViewDelegate {
     func isAuthorized() -> Bool {
         return requestSerializer.accessToken != nil && !requestSerializer.accessToken.expired
     }
+
+    func getTimeline(endpoint: String, user_id: String!, since_id: String!, max_id: String!, callback: (tweets: [Tweet]!, error: NSError!) -> Void) {
+
+        var parameters = [String: String]()
+
+        if since_id != nil {
+            parameters["since_id"] = since_id
+        } else if max_id != nil {
+            parameters["max_id"] = max_id
+        } else {
+            parameters["since_id"] = "1"
+        }
+
+        if user_id != nil {
+            parameters["user_id"] = user_id
+        }
+
+        GET(endpoint,
+            parameters: parameters,
+            success: {
+                // Success
+                (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+
+                var objects = response as [NSDictionary]
+                var tweets: [Tweet] = []
+
+                for object in objects {
+                    var tweet = Tweet(jsonObject: object)
+                    tweets.append(tweet)
+                }
+
+                callback(tweets: tweets, error: nil)
+            },
+            failure: {
+                // Failure
+                (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                callback(tweets: nil, error: error)
+            })
+    }
+
+    func getHomeTimeline(since_id: String!, max_id: String!, callback: (tweets: [Tweet]!, error: NSError!) -> Void) {
+
+        getTimeline("statuses/home_timeline.json",
+            user_id: nil,
+            since_id: since_id,
+            max_id: max_id,
+            callback: callback)
+    }
+
+    func getMentionsTimeline(since_id: String!, max_id: String!, callback: (tweets: [Tweet]!, error: NSError!) -> Void) {
+
+        getTimeline("statuses/mentions_timeline.json",
+            user_id: nil,
+            since_id: since_id,
+            max_id: max_id,
+            callback: callback)
+    }
+
+    func getUserTimeline(user_id: String!, since_id: String!, max_id: String!, callback: (tweets: [Tweet]!, error: NSError!) -> Void) {
+
+        getTimeline("statuses/user_timeline.json",
+            user_id: user_id,
+            since_id: since_id,
+            max_id: max_id,
+            callback: callback)
+    }
+
+    func getMyTimeline(since_id: String!, max_id: String!, callback: (tweets: [Tweet]!, error: NSError!) -> Void) {
+
+        getUserTimeline(nil, since_id: since_id, max_id: max_id, callback: callback)
+    }
+
+    func getUserInfo(user_id: String!, callback: (user: User!, error: NSError!) -> Void) {
+
+        var endpoint: String
+        var parameters = [String: String]()
+
+        if user_id == nil {
+            endpoint = "account/verify_credentials.json"
+        } else {
+            endpoint = "users/show.json"
+            parameters["user_id"] = user_id
+        }
+
+        GET(endpoint,
+            parameters: parameters,
+            success: {
+                // Success
+                (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+
+                var jsonObject = response as NSDictionary
+                var user = User(jsonObject: jsonObject)
+                callback(user: user, error: nil)
+            },
+            failure: {
+                // Failure
+                (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                callback(user: nil, error: error)
+            })
+    }
+
+    func tweet(status: String, callback: (error: NSError!) -> Void) {
+
+        var parameters = [
+            "status": status
+        ]
+
+        POST("statuses/update.json",
+            parameters: parameters,
+            success: {
+                // Success
+                (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                callback(error: nil)
+            },
+            failure: {
+                // Failure
+                (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                callback(error: error)
+            })
+    }
+
+    func retweet(tweet_id: String, callback: (error: NSError!) -> Void) {
+
+        POST("statuses/retweet/\(tweet_id).json",
+            parameters: nil,
+            success: {
+                // Success
+                (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                callback(error: nil)
+            },
+            failure: {
+                // Failure
+                (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                callback(error: error)
+            })
+    }
+    
 }
