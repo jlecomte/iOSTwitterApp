@@ -14,7 +14,7 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet var screenNameLabel: UILabel!
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var createdAtLabel: UILabel!
-    @IBOutlet var bodyLabel: UILabel!
+    @IBOutlet var bodyTextView: UITextView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

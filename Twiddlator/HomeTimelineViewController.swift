@@ -15,17 +15,36 @@ class HomeTimelineViewController: UIViewController, UITableViewDelegate, UITable
     var tweets: [Tweet] = []
     let client = TwitterClient.sharedInstance
 
+    var refreshControl: UIRefreshControl!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        MMProgressHUD.setPresentationStyle(MMProgressHUDPresentationStyle.None)
 
         tweetListTableView.delegate = self
         tweetListTableView.dataSource = self
 
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh...")
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        tweetListTableView.addSubview(refreshControl)
+
+        fetchTweets(nil)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    func fetchTweets(since_id: String!) {
         client.getHomeTimeline(nil, max_id: nil) {
             (tweets: [Tweet]!, error: NSError!) -> Void in
 
+            self.refreshControl.endRefreshing()
+
             if error == nil {
-                self.tweets = tweets
+                self.tweets = tweets + self.tweets
                 self.tweetListTableView.reloadData()
             } else {
                 // TODO
@@ -34,10 +53,21 @@ class HomeTimelineViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func refresh(sender:AnyObject) {
+        var since_id: String! = nil
+
+        if tweets.count > 0 {
+            since_id = tweets[0].uid
+        }
+
+        fetchTweets(since_id)
     }
 
+/*
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        var tweet = tweets[indexPath.row]
+    }
+*/
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets.count
     }
@@ -52,8 +82,14 @@ class HomeTimelineViewController: UIViewController, UITableViewDelegate, UITable
         cell.screenNameLabel.text = tweet.author?.screenName
         cell.userNameLabel.text = "@\(tweet.author!.userName!)"
         cell.createdAtLabel.text = tweet.createdAt
-        cell.bodyLabel.text = tweet.body
+        cell.bodyTextView.text = tweet.body
 
         return cell
+    }
+
+    @IBAction func onSignOut(sender: AnyObject) {
+        client.deauthorize()
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        appDelegate.showLogin()
     }
 }
