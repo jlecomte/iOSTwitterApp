@@ -12,7 +12,7 @@
 		65EB959E19D7916200A98DD7 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB959D19D7916200A98DD7 /* TweetTableViewCell.swift */; };
 		65EB95A019D791CA00A98DD7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB959F19D791CA00A98DD7 /* LoginViewController.swift */; };
 		65F8AB4219D6272C00030D76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8AB4119D6272C00030D76 /* AppDelegate.swift */; };
-		65F8AB4419D6272C00030D76 /* HomeTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8AB4319D6272C00030D76 /* HomeTimeline.swift */; };
+		65F8AB4419D6272C00030D76 /* HomeTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8AB4319D6272C00030D76 /* HomeTimelineViewController.swift */; };
 		65F8AB4719D6272C00030D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F8AB4519D6272C00030D76 /* Main.storyboard */; };
 		65F8AB4919D6272C00030D76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65F8AB4819D6272C00030D76 /* Images.xcassets */; };
 		65F8AB4C19D6272C00030D76 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F8AB4A19D6272C00030D76 /* LaunchScreen.xib */; };
@@ -39,7 +39,7 @@
 		65F8AB3C19D6272C00030D76 /* Twiddlator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twiddlator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F8AB4019D6272C00030D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65F8AB4119D6272C00030D76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65F8AB4319D6272C00030D76 /* HomeTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimeline.swift; sourceTree = "<group>"; };
+		65F8AB4319D6272C00030D76 /* HomeTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimelineViewController.swift; sourceTree = "<group>"; };
 		65F8AB4619D6272C00030D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65F8AB4819D6272C00030D76 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		65F8AB4B19D6272C00030D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		65F8AB6219D6296100030D76 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				65F8AB4319D6272C00030D76 /* HomeTimeline.swift */,
+				65F8AB4319D6272C00030D76 /* HomeTimelineViewController.swift */,
 				65EB959F19D791CA00A98DD7 /* LoginViewController.swift */,
 				65EB959D19D7916200A98DD7 /* TweetTableViewCell.swift */,
 			);
@@ -304,7 +304,7 @@
 			files = (
 				65EB95A019D791CA00A98DD7 /* LoginViewController.swift in Sources */,
 				65F8AB6C19D62C3E00030D76 /* TwitterClient.swift in Sources */,
-				65F8AB4419D6272C00030D76 /* HomeTimeline.swift in Sources */,
+				65F8AB4419D6272C00030D76 /* HomeTimelineViewController.swift in Sources */,
 				65F8AB4219D6272C00030D76 /* AppDelegate.swift in Sources */,
 				65EB959C19D7796000A98DD7 /* User.swift in Sources */,
 				65F8AB6719D629CF00030D76 /* Tweet.swift in Sources */,

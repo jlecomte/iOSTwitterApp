@@ -11,7 +11,7 @@ import Foundation
 class User {
 
     var uid: String?
-    var name: String?
+    var userName: String?
     var screenName: String?
     var profileImageUrl: String?
     var followersCount: Int?
@@ -20,7 +20,7 @@ class User {
 
     init(jsonObject: NSDictionary) {
         uid = jsonObject["id_str"] as? String
-        name = jsonObject["name"] as? String
+        userName = jsonObject["name"] as? String
         screenName = jsonObject["screen_name"] as? String
         profileImageUrl = jsonObject["profile_image_url"] as? String
         followersCount = jsonObject["followers_count"] as? Int
