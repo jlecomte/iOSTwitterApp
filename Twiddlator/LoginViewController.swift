@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  Twiddlator
 //
-//  Created by Julien Lecomte on 9/26/14.
+//  Created by Julien Lecomte on 9/27/14.
 //  Copyright (c) 2014 Julien Lecomte. All rights reserved.
 //
 
 import UIKit
 
-class HomeTimeline: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,5 +16,9 @@ class HomeTimeline: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    @IBAction func onLogin(sender: AnyObject) {
+        TwitterClient.sharedInstance.authorize()
     }
 }

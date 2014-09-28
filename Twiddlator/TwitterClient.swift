@@ -46,6 +46,8 @@ class TwitterClient: BDBOAuth1RequestOperationManager, UIAlertViewDelegate {
             failure: {
                 (error: NSError!) -> Void in
 
+                println(error);
+
                 UIAlertView(
                     title: "Error",
                     message: "Could not acquire OAuth request token. Please try again later.",

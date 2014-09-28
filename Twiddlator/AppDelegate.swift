@@ -14,15 +14,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var client = TwitterClient.sharedInstance
 
+    func showLogin() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController
+        window?.rootViewController = vc
+    }
+
     func showHomeTimeline() {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nvc = storyboard.instantiateViewControllerWithIdentifier("RootNavigationController") as UINavigationController
+        window?.rootViewController = nvc
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         if client.isAuthorized() {
-            // showHomeTimeline()
+            showHomeTimeline()
         } else {
-            // showLogin()
+            showLogin()
         }
         return true
     }
@@ -55,6 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 client.handleOAuthCallback(url.query!, success: {
                     () -> Void in
                     println("Success")
+                    self.showHomeTimeline()
                 })
             }
 
