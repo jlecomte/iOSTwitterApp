@@ -25,6 +25,9 @@ class HomeTimelineViewController: UIViewController, UITableViewDelegate, UITable
         tweetListTableView.delegate = self
         tweetListTableView.dataSource = self
 
+        tweetListTableView.estimatedRowHeight = 95
+        tweetListTableView.rowHeight = UITableViewAutomaticDimension
+
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh...")
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
@@ -76,10 +79,10 @@ class HomeTimelineViewController: UIViewController, UITableViewDelegate, UITable
         var tweet = tweets[indexPath.row]
 
         cell.profileImage.setImageWithURL(NSURL(string: tweet.author!.profileImageUrl!))
-        cell.screenNameLabel.text = tweet.author?.screenName
-        cell.userNameLabel.text = "@\(tweet.author!.userName!)"
+        cell.userNameLabel.text = "@\(tweet.author!.screenName!)"
+        cell.screenNameLabel.text = tweet.author?.userName
         cell.createdAtLabel.text = tweet.createdAt
-        cell.bodyTextView.text = tweet.body
+        cell.bodyLabel.text = tweet.body
 
         // Additional data used for segue...
         cell.tweet = tweet

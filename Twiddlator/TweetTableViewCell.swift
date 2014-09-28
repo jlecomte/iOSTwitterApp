@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TweetTableViewCell: UITableViewCell {
+class TweetTableViewCell: UITableViewCell, UITextViewDelegate {
 
     var tweet: Tweet?
 
@@ -16,7 +16,7 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet var screenNameLabel: UILabel!
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var createdAtLabel: UILabel!
-    @IBOutlet var bodyTextView: UITextView!
+    @IBOutlet var bodyLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
