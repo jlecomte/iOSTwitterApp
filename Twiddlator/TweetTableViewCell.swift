@@ -10,6 +10,8 @@ import UIKit
 
 class TweetTableViewCell: UITableViewCell {
 
+    var tweet: Tweet?
+
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var screenNameLabel: UILabel!
     @IBOutlet var userNameLabel: UILabel!

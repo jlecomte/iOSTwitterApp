@@ -186,13 +186,9 @@ class TwitterClient: BDBOAuth1RequestOperationManager, UIAlertViewDelegate {
             })
     }
 
-    func tweet(status: String, callback: (error: NSError!) -> Void) {
+    func sendPostRequest(endpoint: String, parameters: [String: String]!, callback: (error: NSError!) -> Void) {
 
-        var parameters = [
-            "status": status
-        ]
-
-        POST("statuses/update.json",
+        POST(endpoint,
             parameters: parameters,
             success: {
                 // Success
@@ -206,20 +202,31 @@ class TwitterClient: BDBOAuth1RequestOperationManager, UIAlertViewDelegate {
             })
     }
 
+    func tweet(status: String, callback: (error: NSError!) -> Void) {
+
+        sendPostRequest("statuses/update.json",
+            parameters: [ "status": status ],
+            callback: callback)
+    }
+
     func retweet(tweet_id: String, callback: (error: NSError!) -> Void) {
 
-        POST("statuses/retweet/\(tweet_id).json",
+        sendPostRequest("statuses/retweet/\(tweet_id).json",
             parameters: nil,
-            success: {
-                // Success
-                (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-                callback(error: nil)
-            },
-            failure: {
-                // Failure
-                (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-                callback(error: error)
-            })
+            callback: callback)
     }
-    
+
+    func favorite(tweet_id: String, callback: (error: NSError!) -> Void) {
+
+        sendPostRequest("favorites/create.json",
+            parameters: [ "id": tweet_id ],
+            callback: callback)
+    }
+
+    func unfavorite(tweet_id: String, callback: (error: NSError!) -> Void) {
+
+        sendPostRequest("favorites/destroy.json",
+            parameters: [ "id": tweet_id ],
+            callback: callback)
+    }
 }

@@ -63,18 +63,15 @@ class HomeTimelineViewController: UIViewController, UITableViewDelegate, UITable
         fetchTweets(since_id)
     }
 
-/*
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        var tweet = tweets[indexPath.row]
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
-*/
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // TweetTableViewCell
-
         var cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell") as TweetTableViewCell
         var tweet = tweets[indexPath.row]
 
@@ -84,6 +81,9 @@ class HomeTimelineViewController: UIViewController, UITableViewDelegate, UITable
         cell.createdAtLabel.text = tweet.createdAt
         cell.bodyTextView.text = tweet.body
 
+        // Additional data used for segue...
+        cell.tweet = tweet
+
         return cell
     }
 
@@ -91,5 +91,13 @@ class HomeTimelineViewController: UIViewController, UITableViewDelegate, UITable
         client.deauthorize()
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         appDelegate.showLogin()
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TweetDetail" {
+            var cell = sender as TweetTableViewCell
+            var detailViewController = segue.destinationViewController as TweetDetailViewController
+            detailViewController.tweet = cell.tweet
+        }
     }
 }
