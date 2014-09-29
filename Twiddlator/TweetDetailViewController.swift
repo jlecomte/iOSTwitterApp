@@ -15,8 +15,8 @@ class TweetDetailViewController: UIViewController {
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var screenNameLabel: UILabel!
     @IBOutlet var userNameLabel: UILabel!
-    @IBOutlet var statusTextView: UITextView!
     @IBOutlet var timestampLabel: UILabel!
+    @IBOutlet var bodyLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class TweetDetailViewController: UIViewController {
         profileImage.setImageWithURL(NSURL(string: author.profileImageUrl!))
         screenNameLabel.text = author.userName!
         userNameLabel.text = "@\(author.screenName!)"
-        statusTextView.text = tweet?.body
+        bodyLabel.text = tweet?.body
         timestampLabel.text = tweet?.createdAt
     }
 
